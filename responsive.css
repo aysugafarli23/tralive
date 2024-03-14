@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) {
+    :root {
+        --product-row-count: 2;
+    }
+
+    .res__toggle__btn {
+        display: block;
+
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+
+
+    .photo {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    :root {
+        --product-row-count: 1;
+    }
+
+    .intro h1 {
+        font-size: 20px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+
+
+}

@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --blue: #00095E;
+    --blue-child: #7EA0FF;
+    --yellow: #FFC800;
+    --font-fam1: font-family: "Josefin Sans", sans-serif;
+    --font-fam2: Roboto, sans-serif;
+    --product-gap: 30px;
+    --product-row-count: 3;
+}
+
+.container {
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+nav .link {
+    color: var(--blue);
+    font-weight: 500;
+    padding: 39px 2px;
+    font-size: 16px;
+    font-family: var(--font-fam1);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.4s
+}
+
+nav .link:hover {
+    color: var(--blue-child);
+}
+
+nav .link:before {
+    content: "";
+    background-color: var(--blue-child);
+    position: absolute;
+    width: 100%;
+    bottom: 30%;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    transition-property: right;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    box-shadow: 2px 2px 8px var(--color-white);
+    -webkit-box-shadow: 2px 2px 8px var(--color-white);
+    -moz-box-shadow: 2px 2px 8px var(--color-white);
+}
+
+nav .link:hover::before {
+    right: 0%;
+}
+
+nav ul li .btn {
+    padding: 20px 25px;
+    color: white;
+    background-color: var(--yellow);
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.res__toggle__btn {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    
+}
+
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    font-family: var(--font-fam2);
+    width: 100%;
+    height: 250px;
+    margin: 80px;
+    transform: translateY(60%);
+
+}
+
+.intro h1 {
+    font-size: 70px;
+    font-family: var(--font-fam1);
+    color: var(--blue);
+    position: relative;
+}
+
+.intro .under {
+    position: relative;
+}
+
+.intro .under::before {
+    content: "";
+    width: 100%;
+    height: 15px;
+    background-color: var(--yellow);
+    position: absolute;
+    display: inline-block;
+    top: 58%;
+    z-index: -1;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.intro p {
+    color: var(--blue);
+    font-size: 20px;
+    margin: 5px auto;
+}
+
+.intro .btn {
+    font-size: 18px;
+    color: white;
+    background: linear-gradient(to bottom, #00095e 0%, #0c0c1f 100%);
+    padding: 25px 35px;
+    border-radius: 15px;
+    margin-top: 35px;
+}
+
+.photo {
+    width: 100%;
+    height: calc(150vh - 510px);
+    background-image: url("https://preview.colorlib.com/theme/tralive/assets/img/hero/h1_hero1.png.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    transform: translateY(160px);
+}
+
+.photo img {
+    width: 50%;
+    transform: translateY(230px);
+    animation: car 6s linear infinite;
+    position: relative;
+}
+
+@keyframes car {
+    0% {
+        right: -40%;
+    }
+
+    50% {
+        right: 60%;
+        left: 30%;
+    }
+
+    100% {
+        right: 0%;
+        left: 50%;
+    }
+}
+
+.slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    transform: translateY(180px);
+}
+
+.slogan p {
+    color: var(--blue-child);
+    font-size: 20px;
+    font-family: var(--font-fam2);
+}
+
+.slogan h2 {
+    color: var(--blue);
+    font-size: 40px;
+    font-family: var(--font-fam1);
+}
+
+.events {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transform: translateY(200px);
+}
+
+.card {
+    width: calc(100% / var(--product-row-count) - var(--product-gap) - 
+    (var(--product-gap) / var(--product-row-count)));
+    height: 300px;
+    border-radius: 20px;
+    border: 1px solid wheat;
+}
+
+.card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card .desc {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card .desc a {
+    color: var(--blue);
+}
+
+.card .desc h3 {
+    color: var(--blue-child);
+}
+
+.card .date {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.card .date h4 {
+    color: var(--blue-child);
+}
+
+.card .date p {
+    color: var(--blue);
+    font-weight: 600;
+}
