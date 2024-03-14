@@ -14,7 +14,7 @@
     --yellow: #FFC800;
     --font-fam1: font-family: "Josefin Sans", sans-serif;
     --font-fam2: Roboto, sans-serif;
-    --product-gap: 20px;
+    --product-gap: 5px;
     --product-row-count: 3;
 }
 
@@ -93,7 +93,7 @@ nav ul li .btn {
     background-color: transparent;
     border: none;
     font-size: 30px;
-    
+
 }
 
 
@@ -103,7 +103,7 @@ nav ul li .btn {
     justify-content: center;
     flex-flow: column;
     font-family: var(--font-fam2);
-    width: 100%;
+    width: 90%;
     height: 250px;
     margin: 80px;
     transform: translateY(60%);
@@ -143,7 +143,8 @@ nav ul li .btn {
 }
 
 .intro .btn {
-    font-size: 18px;
+    display: inline-block;
+    font-size: 20px;
     color: white;
     text-align: center;
     background: linear-gradient(to bottom, #00095e 0%, #0c0c1f 100%);
@@ -152,34 +153,36 @@ nav ul li .btn {
     margin-top: 35px;
     transition: color 0.4s linear;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 1;
 }
-.intro .btn::before{
+
+.intro .btn::before {
     content: "";
     position: absolute;
-    z-index: -1;
-    top: 0%;
-    left: 0%;
+    top: 100%;
     right: 0;
     bottom: 0;
+    left: 0;
+    border-radius: 15px;
     background: var(--yellow);
+    z-index: -1;
     transform: scaleY(0);
-    -webkit-transform-origin: 50% 0;
     transform-origin: 50% 0;
-    transition-property:transform;
+    transition-property: transform;
     transition-duration: 0.5s;
     transition-timing-function: ease-out
 }
 
-.intro .btn:hover::before{
-    top:-100%;
+.intro .btn:hover::before {
+    top: 0%;
     left: 0%;
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
+
 .photo {
     width: 100%;
     height: calc(150vh - 510px);
@@ -237,7 +240,7 @@ nav ul li .btn {
 
 .events {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -245,11 +248,18 @@ nav ul li .btn {
 }
 
 .card {
-    width: calc(100% / var(--product-row-count) - var(--product-gap) - 
-    (var(--product-gap) / var(--product-row-count)));
+    width: calc(100% / var(--product-row-count) - var(--product-gap) - (var(--product-gap) / var(--product-row-count)));
     height: 320px;
     border-radius: 20px;
     border: 1px solid wheat;
+    transition: .2s ease-in-out all;
+
+}
+
+.card:hover img {
+    /* transform: scale(1.1); */
+    transform: scale(1.01);
+
 }
 
 .card img {
